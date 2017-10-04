@@ -1,5 +1,5 @@
 MANIFEST.in
-README
+setup.cfg
 setup.py
 namesex/__init__.py
 namesex.egg-info/PKG-INFO
@@ -7,6 +7,7 @@ namesex.egg-info/SOURCES.txt
 namesex.egg-info/dependency_links.txt
 namesex.egg-info/top_level.txt
 namesex/models/basevec.txt
+namesex/models/freq_knn.pkl
 namesex/models/freq_log.pkl
 namesex/models/namesex.w2v
 namesex/models/w2v_knn.pkl
