@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# from setuptools import setup
-from distutils.core import setup
+from setuptools import setup, find_packages
+# from distutils.core import setup
 
 setup(
   name='namesex',
-  packages = ['namesex'],
+  packages = ['namesex','namesex/models'],
   version = '1.5', 
   author = 'HSIN-MIN LU, YU-LUN LI, CHI-YU LIN',
   author_email = 'evan860126@gmail.com',
