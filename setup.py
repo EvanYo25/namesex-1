@@ -5,10 +5,10 @@ from distutils.core import setup
 setup(
   name='namesex',
   packages = ['namesex'],
-  version = '1.0', 
+  version = '1.5', 
   author = 'HSIN-MIN LU, YU-LUN LI, CHI-YU LIN',
   author_email = 'evan860126@gmail.com',
   keywords = ['name,gender'],
   url = 'https://github.com/EvanYo25/namesex-1',
-  download_url = 'https://github.com/EvanYo25/namesex-1/tarball/v1.0'
+  download_url = 'https://github.com/EvanYo25/namesex-1/archive/v1.5.tar.gz'
 )
