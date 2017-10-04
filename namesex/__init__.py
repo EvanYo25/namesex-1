@@ -1,19 +1,18 @@
 # -*- coding: utf-8 -*-
 import os
 import gensim.models.word2vec as word2vec
-import pkg_resources
 from sklearn.externals import joblib
+import pkg_resources
 
 class NameSex:
 	def __init__(self, model1 = 'freq_log', model2 = 'w2v_knn', percentage1 = 0.75, percentage2 = 0.25):
-		pkg_resources.resource_filename('namesex', './models') 
 		self.model1 = model1
 		self.model2 = model2
 		self.percentage1 = percentage1
 		self.percentage2 = percentage2
 		self.basevec = []
-		self.w2v = word2vec.Word2Vec.load('./namesex/models/namesex.w2v')
-		tmp = open('./namesex/models/basevec.txt', 'r')
+		self.w2v = word2vec.Word2Vec.load(pkg_resources.resource_filename('namesex','models/namesex.w2v'))
+		tmp = open(pkg_resources.resource_filename('namesex','/models/basevec.txt'), 'r',encoding = 'utf8')
 		for line in tmp:
 			for word in line:
 				self.basevec.append(word)
@@ -21,7 +20,7 @@ class NameSex:
 	def uni_model(self, namelist, model = None, prob = True):
 		if model == None:
 			model = self.model1
-		mod = joblib.load('./namesex/models/'+model+'.pkl')
+		mod = joblib.load(pkg_resources.resource_filename('namesex','/models/'+model+'.pkl'))
 		veclist = []
 		if model=='freq_log' or model=='freq_knn':
 			for name in namelist:

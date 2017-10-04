@@ -1,2 +1,1 @@
 namesex
-namesex/models

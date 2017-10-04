@@ -1,2 +1,2 @@
-include README.md
+include namesex/README.md
 recursive-include namesex/models *
