@@ -15,14 +15,11 @@ namesex
 * 可選擇上述四種判別方法的其中兩種，以自訂權重來作為判斷依據。
 * 可選擇回傳性別或性別的機率。
 
-安裝說明(待修改)
+安裝說明
 =======
+請使用python3
 
-代码对 Python 2/3 均兼容
-
-* 全自動安裝：`easy_install namesex` 或者 `pip install namesex` / `pip3 install namesex`
-* 半自動安裝：先下下載 http://pypi.python.org/pypi/namesex/ ，解壓縮後執行 `python setup.py install`
-* 手動安裝：將 namesex 目錄放置於當前目錄或者是 site-packages 目錄
+* 安裝: `pip install namesex` / `pip3 install namesex`
 * 透過 `import namesex` 來引用
 
 演算法
