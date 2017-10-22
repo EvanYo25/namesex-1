@@ -1,11 +1,12 @@
 MANIFEST.in
-README.md
 setup.cfg
 setup.py
+namesex/README.md
 namesex/__init__.py
 namesex.egg-info/PKG-INFO
 namesex.egg-info/SOURCES.txt
 namesex.egg-info/dependency_links.txt
+namesex.egg-info/requires.txt
 namesex.egg-info/top_level.txt
 namesex/models/basevec.txt
 namesex/models/freq_knn.pkl

@@ -1,18 +1,20 @@
 # -*- coding: utf-8 -*-
 import os
+import numpy as np
 import gensim.models.word2vec as word2vec
 from sklearn.externals import joblib
 import pkg_resources
 
 class NameSex:
-	def __init__(self, model1 = 'freq_log', model2 = 'w2v_knn', percentage1 = 0.75, percentage2 = 0.25):
+	def __init__(self, model1 = 'freq_log', model2 = 'w2v_log', percentage1 = 0.75, percentage2 = 0.25, mode = 0):
 		self.model1 = model1
 		self.model2 = model2
 		self.percentage1 = percentage1
 		self.percentage2 = percentage2
 		self.basevec = []
+		self.mode = mode
 		self.w2v = word2vec.Word2Vec.load(pkg_resources.resource_filename('namesex','models/namesex.w2v'))
-		tmp = open(pkg_resources.resource_filename('namesex','/models/basevec.txt'), 'r',encoding = 'utf8')
+		tmp = open(pkg_resources.resource_filename('namesex','/models/basevec.txt'), 'r', encoding='UTF-8')
 		for line in tmp:
 			for word in line:
 				self.basevec.append(word)
@@ -61,7 +63,20 @@ class NameSex:
 
  
 	def predict_prob(self, namelist):
+		if self.mode == 1:
+			for i in range(len(namelist)):
+				namelist[i] = '姓' + namelist[i]
 		return self.percentage1*self.uni_model(namelist, self.model1) + self.percentage2*self.uni_model(namelist, self.model2)
 
 	def predict(self, namelist):
-		return self.percentage1*self.uni_model(namelist, self.model1, False) + self.percentage2*self.uni_model(namelist, self.model2, False)
+		if self.mode == 1:
+			for i in range(len(namelist)):
+				namelist[i] = '姓' + namelist[i]
+		array = self.percentage1*self.uni_model(namelist, self.model1) + self.percentage2*self.uni_model(namelist, self.model2)
+		ret = []
+		for i in range(len(array)):
+			if array[i][0]<0.5:
+				ret.append(1)
+			else:
+				ret.append(0)
+		return np.array(ret, np.float)
