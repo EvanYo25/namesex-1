@@ -1,12 +1,12 @@
 Metadata-Version: 1.1
 Name: namesex
-Version: 0.0.6
-Summary: UNKNOWN
+Version: 0.0.7
+Summary: Gender Classification by Chinese Name
 Home-page: https://github.com/EvanYo25/namesex-1
 Author: HSIN-MIN LU, YU-LUN LI, CHI-YU LIN
 Author-email: evan860126@gmail.com
 License: UNKNOWN
-Download-URL: https://github.com/EvanYo25/namesex-1/archive/v2.5.0.tar.gz
+Download-URL: https://github.com/EvanYo25/namesex-1
 Description: UNKNOWN
 Keywords: name,gender
 Platform: UNKNOWN

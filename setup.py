@@ -16,6 +16,6 @@ setup(
   	'sklearn',
   ],
   url = 'https://github.com/EvanYo25/namesex-1',
-  download_url = 'https://github.com/EvanYo25/namesex-1/archive/v2.5.0.tar.gz',
+  download_url = 'https://github.com/EvanYo25/namesex-1',
   include_package_data=True
 )
